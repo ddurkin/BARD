@@ -51,10 +51,10 @@ public class RegisteringExternalOntologyFactory implements ExternalOntologyFacto
 
 	protected void initialize() throws ExternalOntologyException {
 		getCreators().add(new ExternalOntologyNCBI.NCBICreator());
-		getCreators().add( new ExternalOntologyOLS.OLSCreator() );
+		getCreators().add( new ExternalOntologyOLS.OLSCreator() ); // OLS is Handling GO lookups via OLS webservice
 //		getCreators().add(new ExternalOntologyGO.GOCreator(GOUtil.getEBIDataSource()));
 //		getCreators().add(new ExternalOntologyGOGeneProduct.GOCreator(GOUtil.getEBIDataSource()));
-//		getCreators().add(new ExternalOntologyUniprot.UniprotCreator());
+		getCreators().add(new ExternalOntologyUniprot.UniprotCreator());
 		getCreators().add(new ExternalOntologyATCC.ATCCCreator());
 		getCreators().add(new ExternalOntologyDisease.DiseaseCreator());
 	}
