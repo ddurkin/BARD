@@ -7,7 +7,7 @@ dependencies {
     compile "edu.scripps:eutils-java:20140623"
     compile "mysql:mysql-connector-java:5.1.17"
     compile "com.jolbox:bonecp:0.8.0-rc1"
-    compile "uk.ac.ebi.uniprot.kraken:uniprotjapi:2013.12"
+    compile "uk.ac.ebi.uniprot.kraken:uniprotjapi:2014.06"
     compile "uk.ac.ebi.ols:ols-client:1.18"
     compile "org.ccil.cowan.tagsoup:tagsoup:1.2.1"
     compile "ontocat:ontocat:0.9.9.1"
