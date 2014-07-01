@@ -39,13 +39,14 @@ grails.project.dependency.resolution = {
         // excludes 'ehcache'
     }
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
-
+    
+    String mavenRepoUrl = System.getProperty("mavenRepoUrl") ?: "http://bard-repo:8081/artifactory/bard-virtual-repo"
     repositories {
         inherit(false) // don't repositories from plugins
         grailsPlugins()
         grailsHome()
-        mavenRepo 'http://bard-repo:8081/artifactory/bard-virtual-repo'
-        grailsRepo('http://bard-repo:8081/artifactory/bard-virtual-repo', 'grailsCentral')
+        mavenRepo("${mavenRepoUrl}")
+        grailsRepo("${mavenRepoUrl}", "grailsCentral")
     }
 
     dependencies {

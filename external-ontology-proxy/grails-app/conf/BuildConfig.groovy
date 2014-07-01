@@ -45,12 +45,13 @@ grails.project.dependency.resolution = {
     checksums true // Whether to verify checksums on resolve
     legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
 
+    String mavenRepoUrl = System.getProperty("mavenRepoUrl") ?: "http://bard-repo:8081/artifactory/bard-virtual-repo"
     repositories {
         inherit(false) // don't repositories from plugins
         grailsPlugins()
         grailsHome()
-        mavenRepo "http://localhost:8081/artifactory/bard-virtual-repo"
-        grailsRepo("http://localhost:8081/artifactory/bard-virtual-repo", "grailsCentral")
+        mavenRepo "${mavenRepoUrl}"
+        grailsRepo("${mavenRepoUrl}", "grailsCentral")
     }
 
     dependencies {

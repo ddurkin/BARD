@@ -43,15 +43,16 @@ grails.project.dependency.resolution = {
     }
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     checksums true // Whether to verify checksums on resolve
-
+    
+    String mavenRepoUrl = System.getProperty("mavenRepoUrl") ?: "http://bard-repo:8081/artifactory/bard-virtual-repo"
     repositories {
         inherit(false) // don't repositories from plugins
         grailsPlugins()
         grailsHome()
 
         if (useBroadRepo) {
-            mavenRepo "http://localhost:8081/artifactory/bard-virtual-repo"
-            grailsRepo("http://localhost:8081/artifactory/bard-virtual-repo", "grailsCentral")
+            mavenRepo("${mavenRepoUrl}")
+            grailsRepo("${mavenRepoUrl}", "grailsCentral")
         } else {
             grailsCentral()
             mavenLocal()
