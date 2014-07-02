@@ -6,7 +6,7 @@ subprojects {
 
     repositories {
         maven {
-            url('http://localhost:8081/artifactory/bard-virtual-repo')
+            url(mavenRepoUrl)
         }
     }
 
