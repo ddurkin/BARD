@@ -223,7 +223,7 @@ class ElementController {
         if (!modifyElementAndHierarchyService.updateHierarchyIfNeeded(newElementAndPath)) {
             flash.message = "Failed to delete element-path '${elementAndFullPathToDelete.toString()}'"
         }
-
+        bardCacheUtilsService.refreshDueToNonDictionaryEntry()
         redirect(action: "editHierarchy", id: element.id)
     }
 
@@ -276,7 +276,7 @@ class ElementController {
         } catch (RuntimeException e) {
             flash.message = "Error adding a new element hierarchy path: ${newFullPath}"
         }
-
+	bardCacheUtilsService.refreshDueToNonDictionaryEntry()
         redirect(action: "editHierarchy", id: element.id)
     }
 
